@@ -1,0 +1,99 @@
+include: all_lint_rules.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.mapper.dart"
+    - "**/*.gen.dart"
+    - "build/**"
+    - "lib/generated_plugin_registrant.dart"
+
+  errors:
+    included_file_warning: ignore
+    todo: ignore
+  plugins:
+    - custom_lint
+
+dart_code_metrics:
+  extends:
+    - recommended
+    - package:dart_code_metrics_presets/flutter_hooks.yaml
+    - package:dart_code_metrics_presets/riverpod.yaml
+  rules:
+    - newline-before-return: true
+    - avoid-nullable-interpolation:
+        ignored-invocations:
+          - talker
+          - debug
+          - error
+          - info
+          - warning
+          - verbose
+          - critical
+    - avoid-undisposed-instances:
+        ignored-instances:
+          - MaterialPageRoute
+    - function-always-returns-null:
+        ignored-invocations:
+          - useCallback
+          - useEffect
+    - avoid-nested-conditional-expressions:
+        acceptable-level: 2
+    # Off:
+    - avoid-duplicate-initializers: false
+    - avoid-flexible-outside-flex: false
+    - avoid-missing-image-alt: false
+    - avoid-passing-async-when-sync-expected: false
+    - avoid-shadowing: false
+    - avoid-unsafe-collection-methods: false
+    - avoid-unused-parameters: false
+    - avoid-wildcard-cases-with-enums: false
+    - no-equal-switch-case: false
+    - no-equal-switch-expression-cases: false
+    - prefer-correct-callback-field-name: false
+    - prefer-declaring-const-constructor: false
+    - prefer-match-file-name: false
+    - prefer-prefixed-global-constants: false
+    - prefer-private-extension-type-field: false
+    - prefer-single-widget-per-file: false
+    - prefer-switch-with-enums: false
+    - prefer-trailing-comma: false
+    - unnecessary-trailing-comma: false
+
+  formatter:
+    cascading-widget-extensions: true
+
+custom_lint:
+  rules:
+    - avoid_manual_providers_as_generated_provider_dependency: false
+    - async_value_nullable_pattern: false
+linter:
+  rules:
+    always_specify_types: false
+    always_use_package_imports: false
+    avoid_annotating_with_dynamic: false
+    avoid_catches_without_on_clauses: false
+    avoid_classes_with_only_static_members: false
+    cascade_invocations: false
+    diagnostic_describe_all_properties: false
+    discarded_futures: false
+    do_not_use_environment: false
+    document_ignores: false
+    flutter_style_todos: false
+    lines_longer_than_80_chars: false
+    one_member_abstracts: false
+    prefer_double_quotes: false
+    prefer_expression_function_bodies: false
+    prefer_final_parameters: false
+    public_member_api_docs: false
+    require_trailing_commas: false
+    specify_nonobvious_local_variable_types: false
+    specify_nonobvious_property_types: false
+    unnecessary_final: false
+    use_decorated_box: false
+    use_if_null_to_convert_nulls_to_bools: false
+    use_late_for_private_fields_and_variables: false

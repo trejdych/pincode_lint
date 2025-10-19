@@ -1,0 +1,21 @@
+{
+  "roots": [
+    "pincode_lint"
+  ],
+  "packages": [
+    {
+      "name": "pincode_lint",
+      "version": "1.0.0",
+      "dependencies": [
+        "dart_code_metrics_presets"
+      ],
+      "devDependencies": []
+    },
+    {
+      "name": "dart_code_metrics_presets",
+      "version": "2.26.1",
+      "dependencies": []
+    }
+  ],
+  "configVersion": 1
+}
