@@ -1,9 +1,9 @@
 name: pincode_lint
 description: A custom linting rules package for Dart projects.
-version: 1.0.0
+version: 1.0.1
 
 environment:
   sdk: ^3.4.0
 
 dependencies:
-  dart_code_metrics_presets: ^2.26.1
+  dart_code_metrics_presets: ^2.31.0

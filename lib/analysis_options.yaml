@@ -24,7 +24,6 @@ dart_code_metrics:
     - package:dart_code_metrics_presets/flutter_hooks.yaml
     - package:dart_code_metrics_presets/riverpod.yaml
   rules:
-    - newline-before-return: true
     - avoid-nullable-interpolation:
         ignored-invocations:
           - talker
@@ -52,6 +51,7 @@ dart_code_metrics:
     - avoid-unsafe-collection-methods: false
     - avoid-unused-parameters: false
     - avoid-wildcard-cases-with-enums: false
+    - newline-before-return: false
     - no-equal-switch-case: false
     - no-equal-switch-expression-cases: false
     - prefer-correct-callback-field-name: false
