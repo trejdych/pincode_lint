@@ -15,10 +15,8 @@ analyzer:
   errors:
     included_file_warning: ignore
     todo: ignore
-  plugins:
-    - custom_lint
 
-dart_code_metrics:
+dcm:
   extends:
     - recommended
     - package:dart_code_metrics_presets/flutter_hooks.yaml
@@ -67,10 +65,6 @@ dart_code_metrics:
   formatter:
     cascading-widget-extensions: true
 
-custom_lint:
-  rules:
-    - avoid_manual_providers_as_generated_provider_dependency: false
-    - async_value_nullable_pattern: false
 linter:
   rules:
     always_specify_types: false
